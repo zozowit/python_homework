@@ -26,7 +26,7 @@ def save_file(content, old_f):
         f.writelines(content)
         f.close()
     elif choice == '另存为':
-        path = filesavebox()
+        path = g.filesavebox()
         print(path)
         
         (f_dir, f_name) = os.path.split(path)
@@ -34,7 +34,7 @@ def save_file(content, old_f):
         f_new = open(path, 'w')
 
         f_new.writelines(content)
-        f.close()
+        f_new.close()
 
     
 
@@ -48,7 +48,7 @@ def welcome():
         f_path = get_file()
     print(f_path)
     if f_path is not '':
-        f = open(f_path, 'r')
+        f = open(f_path, 'r', encoding='utf-8')
 
         
         f_content = f.readlines()
