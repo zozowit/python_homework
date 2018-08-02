@@ -3,6 +3,7 @@ import os.path
 import easygui as g
 
 file_dict = {}
+target = 100000
 
 def get_file_lines(filename):
     f = open(filename, 'r', encoding='utf-8', errors='ignore')
@@ -43,7 +44,24 @@ def calc_file(path, name):
 
         print(file_dict)
 
+def show_result():
+    total_len = 0
+    all_text = ''
+    cur_text = ''
+
+    global target
     
+    for key in file_dict:
+        cur_text = ''
+        
+        total_len += file_dict[key][1]
+        cur_text = '【%s】源文件%d个, 源代码%d行\n'%(key, file_dict[key][0], file_dict[key][1])
+        all_text += cur_text
+
+    msg_str = '您目前共积累编写了%d行代码，完成进度：%d%%\n离%d万行代码还差%d行，请继续努力'%(total_len, total_len/target*100, target/10000, target-total_len)
+
+    g.textbox(msg=msg_str, title='统计结果', text=all_text)    
+        
 
 def search_file(path):
     for root, dirs, files in os.walk(path):
@@ -61,5 +79,7 @@ def main():
     search_file(path)
 
     print(path)
+
+    show_result()
 
 main()
