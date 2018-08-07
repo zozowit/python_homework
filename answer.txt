@@ -1169,3 +1169,58 @@ x和y是实例属性
 
 5.
 printBB定义时，没有传入self参数
+
+第40课
+0.
+issubclass
+
+1.
+isinstance(a, A, 'no')
+
+2.
+hasattr(a, 'x')
+
+3.
+将一组函数封装，包括get， set和del方法
+这样对应的方法修改后，调用者不用修改
+
+4. 
+x = property(getXSize, setXSize, delXSize)
+
+5.
+class CodeA:
+	@staticmethod
+    def foo():
+        print("调用静态方法 foo()")
+
+class CodeB:
+	@classmethod
+	def foo(cls):
+        print("调用类方法 foo()")
+
+6.
+def something(func):
+	func()
+
+def f():
+    print("I love FishC.com!")
+
+something(f)
+
+7.
+class C:
+    def __init__(self, size=10):
+        self._x = size
+
+	@property
+    def x(self):
+        return self._x
+
+	@x.setter
+    def x(self, value):
+        self._x = value
+
+	@x.deleter
+    def delXSize(self):
+        del self._x
+
