@@ -10,3 +10,5 @@ class Nint(int):
             return ret
         else:
             return int.__new__(cls, x)
+=======
+>>>>>>> 9a8d41513bf3cc7eede369a02b0e5a9602b89eb0
