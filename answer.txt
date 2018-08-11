@@ -1244,4 +1244,31 @@ __init__必须返回None
 5.
 实例被回收的时候
 
-6.
+第42课
+0.
+工厂函数本质是类对象，在类对象中实现各种方法
+
+1.
+__add__()
+
+2.
+实例属性和实例方法相同，方法会被属性覆盖
+
+3.
++: __add__(self, other)
+-: __sub__(self, other)
+*: __mul__(self, other)
+/: __truediv__(self, other)
+//: __floordiv__(self, other)
+%: __mod__(self, other)
+divmod(a, b): __divmod__(a, b)
+**: __pow__(self, other[, modulo])
+<<: __lshift__(self, other)
+>>: __rshift__(self, other)
+&: __and__(self, other)
+^: __xor__(self, other)
+|: __or__(self, other)
+
+4.
+鸭子类型
+
