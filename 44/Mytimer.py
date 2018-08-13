@@ -3,6 +3,7 @@ import time as t
 class MyTimer():
     def __init__(self):
         self.unit = ['年', '月', '天', '小时', '分钟', '秒']
+        self.circle = [0, 12, 30, 24, 60, 60]
         self.prompt = '未开始计时！'
         self.lasted = []
         self.begin = 0
@@ -43,8 +44,16 @@ class MyTimer():
 
         for index in range(6):
             self.lasted.append(self.end[index] - self.begin[index])
-            if self.lasted[index]:
-                self.prompt += (str(self.lasted[index]) + self.unit[index])
+
+        lasted_len = len(self.lasted)
+        for index in range(lasted_len):
+            if self.lasted[index] < 0:
+                self.lasted[index] += self.circle[index]
+                self.lasted[index-1] -= 1
+                
+            self.prompt += (str(self.lasted[index]) + self.unit[index])
+
+        
 
         self.begin = 0
         self.end = 0
