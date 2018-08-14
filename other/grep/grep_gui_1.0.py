@@ -31,8 +31,6 @@ def show_result():
 
     g.textbox(msg='中断统计结果', title='统计结果', text=all_text)    
 
-def try_unzip(file)
-
 def key_search(file):
     irq_dict = {}
 
