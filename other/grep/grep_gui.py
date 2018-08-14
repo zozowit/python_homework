@@ -15,24 +15,26 @@ def show_result():
     cur_text = ''
     cur_statistic= ''
 
-    
-    for key in file_dict:
+    print(all_irq_dict)
+    for key in all_irq_dict:
         cur_text = ''
-        value = file_dict[key]
+        value = all_irq_dict[key]
         
         cur_text = '文件名：' + key +'\n'
         for each in value:
-            cur_text += 'IRQ[%s]: %d times\n'%(each + value[each])
+            cur_text += 'IRQ[%s][%s]: %d times\n'%(each, value[each][1], value[each][0])
             
         all_text += cur_text
 
-    g.textbox(msg=msg_str, title='统计结果', text=all_text)    
-        
+    g.textbox(msg='中断统计结果', title='统计结果', text=all_text)    
+
 def key_search(file):
     irq_dict = {}
 
-    key_gic = ''
-    key_system = ''
+    key_gic = 'gic_show_resume_irq'
+    key_system = 'pm_system_irq_wakeup'
+    irq_num = ''
+    irq_name = ''
     
     (name, ext) = os.path.splitext(file)
 
@@ -45,17 +47,29 @@ def key_search(file):
         index = each_line.find(key_gic)
 
         if index != -1:
-            (a, b, c) = each_line[index:].split(' ', 2)
+            (a, irq_num, c, irq_name) = each_line[index:].split(' ', 3)
+            print(irq_num, irq_name)
+
+            if irq_num in irq_dict:
+                irq_dict[irq_num][0] += 1
+            else:
+                irq_dict[irq_num] = [1, irq_name[: -1]]
+
+            continue
 			
         index = each_line.find(key_system)
 	    
         if index != -1:
-            (a, b, c) = each_line[index:].split(' ', 2)
+            (a, irq_num, c, irq_name) = each_line[index:].split(' ', 3)
 
-        if b in irq_dict:
-            irq_dict[b] += 1
-        else:
-            irq_dict[b] = 1
+            print(irq_num, irq_name)
+
+            if irq_num in irq_dict:
+                irq_dict[irq_num][0] += 1
+            else:
+                irq_dict[irq_num] = [1, irq_name[: -1]] # remove the '\n'
+
+            continue
 
     f.close()
 
