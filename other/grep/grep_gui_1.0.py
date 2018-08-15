@@ -10,7 +10,7 @@ all_irq_dict = {}
 def get_dir():
     path = g.diropenbox(msg='请选择log所在文件夹：', title='浏览文件夹')
 	
-    print('get_dir', path)
+    #print('get_dir', path)
     return path
 
 def show_result():
@@ -18,7 +18,7 @@ def show_result():
     cur_text = ''
     cur_statistic= ''
 
-    print(all_irq_dict)
+    # print(all_irq_dict)
     for key in all_irq_dict:
         cur_text = ''
         value = all_irq_dict[key]
@@ -44,16 +44,22 @@ def key_search(file):
     if ext == '.txt':
         f = open(file, encoding='gb18030', errors='ignore')
     elif ext == '.gz':
-        f = gzip.open(file, 'rb')
+        f = z.open(file, 'r')
     else:
         return
 
     for each_line in f:
+        # sometimes there is empty log file
+        if each_line == '':
+            continue
+        elif type(each_line) != 'str':
+            each_line = str(each_line)
+        
         index = each_line.find(key_gic)
 
         if index != -1:
             (a, irq_num, c, irq_name) = each_line[index:].split(' ', 3)
-            print(irq_num, irq_name)
+            # print(irq_num, irq_name)
 
             if irq_num in irq_dict:
                 irq_dict[irq_num][0] += 1
@@ -67,7 +73,7 @@ def key_search(file):
         if index != -1:
             (a, irq_num, c, irq_name) = each_line[index:].split(' ', 3)
 
-            print(irq_num, irq_name)
+            # print(irq_num, irq_name)
 
             if irq_num in irq_dict:
                 irq_dict[irq_num][0] += 1
@@ -78,21 +84,22 @@ def key_search(file):
 
     f.close()
 
-    all_irq_dict[file] = irq_dict
+    if len(irq_dict) != 0:
+        all_irq_dict[file] = irq_dict
 
 def search_file(path):
     for root, dirs, files in os.walk(path):
         for each in files:
-            print(each)
+            # print(each)
             
             temp_str = os.path.join(root, each)
-            print(temp_str)
+            # print(temp_str)
             key_search(temp_str)
 
 def main():
     path = get_dir()
 
-    print(path)
+    # print(path)
 
     search_file(path)
 
