@@ -1295,3 +1295,22 @@ None
 def __setattr__(self, name, value):
 	super().__setattr__(name, value)
 	super().__setattr__('counter', self.counter + 1)
+
+	
+第46课
+0.
+类的实例访问，修改，销毁时调用的内建函数
+
+1.
+__get__
+__set__
+__delete__
+
+2.
+都会
+
+3.
+20
+0
+
+4.
