@@ -1314,3 +1314,24 @@ __delete__
 0
 
 4.
+
+第47课
+0.
+string, list, tuple
+
+1.
+__setitem__(self, key, value)
+__delitem__(self, key)
+
+
+2.
+__reserve__(self)
+
+3.
+__len__(self)
+
+4.
+__getitem__(self, key), __setitem__(self, key, value), __delete__(self, key)
+
+5.
+不是强行要求的，没有遵循协议，也可以编译执行
