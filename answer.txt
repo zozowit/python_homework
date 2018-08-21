@@ -1371,3 +1371,27 @@ return语句
 
 5.
 保证素数能够不断产生
+
+第50课
+0.
+一段程序
+
+1.
+import hello as h
+
+h.hi()
+
+2.
+import hello
+import hello as h
+from hello import *
+
+3.
+def _hi()
+用下划线来表明是私有函数
+
+4.
+嗨，我是B模块
+
+
+
