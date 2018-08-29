@@ -122,9 +122,9 @@ def plot_city(friends):
 def main():
     friends = get_friends()
 
-    # plot_sex(friends)
+    plot_sex(friends)
 
-    # plot_province(friends)
+    plot_province(friends)
 
     plot_city(friends)
     
