@@ -9,6 +9,7 @@ def open_url(url):
     headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36'}
 
     # res = requests.get(url, headers=headers, proxies=proxies)
+    print('url:', url)
     res = requests.get(url, headers=headers)
 
     return res
@@ -20,7 +21,7 @@ def find_movies(res):
     movies = []
     targets = soup.find_all('div', class_='hd')
     for each in targets:
-        moves.append(each.a.span.text)
+        movies.append(each.a.span.text)
 
     # rank score
     ranks = []
@@ -42,7 +43,7 @@ def find_movies(res):
     result = []
     length = len(movies)
     for i in range(length):
-        result.append(movie[i] + ranks[i] + messages[i] + '\n')
+        result.append(movies[i] + ranks[i] + messages[i] + '\n')
 
     return result
 
@@ -67,7 +68,7 @@ def main():
         res = open_url(url)
         result.extend(find_movies(res))
 
-    with open('doubanTop250Movie.txt', 'w', encoding='urt-8') as f:
+    with open('doubanTop250Movie.txt', 'w', encoding='utf-8') as f:
         for each in result:
             f.write(each)
     
