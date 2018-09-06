@@ -1,0 +1,18 @@
+0.
+调用者的名称
+
+1.
+在IDLE中调用的时候
+
+2.
+import sys
+sys.path
+
+3.
+使用package
+
+4.
+package
+
+5.
+当前文件夹下是否有__init__.py
