@@ -1,0 +1,1397 @@
+﻿第十九课
+0.
+我在next()函数里...
+我在pre()函数里...
+
+1.
+有 None
+
+2.
+可以，使用列表或者元祖
+
+3. 
+1314520
+
+4.
+Baby I love you
+
+动动手
+0.
+
+
+>>> def statistic_string(*params):
+	j = 0
+	for single in params:
+		s_len = len(single)
+		al_sum = digit_sum = sp_sum = others_sum = 0
+		for i in range(0, s_len):
+			if single[i].isalpha():
+				al_sum += 1
+			elif single[i].isdigit():
+				digit_sum += 1
+			elif single[i].isspace():
+				sp_sum += 1
+			else:
+				others_sum += 1
+		print('第%d个字符串共有：英文字母%d个，数字%d个，空格%d个，其它字母%d个。'%(j, al_sum, digit_sum, sp_sum, others_sum))
+		j += 1
+
+		
+>>> statistic_string('123abcd   4#e5', '12 ab$$')
+第0个字符串共有：英文字母5个，数字5个，空格3个，其它字母1个。
+第1个字符串共有：英文字母2个，数字2个，空格1个，其它字母2个。
+
+1. 
+>>> def loop_check(origin_string):
+	ret = True
+	s_len = len(origin_string)
+	s_len_half = s_len // 2
+	s_len -= 1
+	for i in range(0, s_len_half):
+		if origin_string[i] != origin_string[s_len-i]:
+			ret = False
+			break
+	return ret
+
+>>> loop_check("1234321")
+True
+>>> loop_check("11234321")
+False
+
+2.
+介绍了函数的返回值，全局变量和局部变量
+
+第20课
+
+0.
+使用global关键字
+
+1. 
+nonlocal
+
+2.
+在外部调用内嵌函数是不合法的
+
+3.
+B的局部变量var在使用前没有定义
+
+4.
+funOut()
+
+5.
+funOut()()
+
+6.
+6
+7
+8
+
+第21课
+0.
+func_A = lambda x, y=3 : x * y
+
+1.
+def func_b(x):
+	if x %2 :
+		return x
+	else:
+		return None
+		
+2.
+起夜次数变少了
+
+3. 
+list(filter(lambda x: x%3 == 0, range(100)))
+
+4.
+print([x for x in range(100) if x%3 == 0])
+
+5.
+list(map(lambda x, y: [x, y], [1,3,5,7,9],[2,4,6,8,0]))
+
+6.
+16
+FishCFishC
+
+第22课
+0.
+函数调用自身，嵌套调用
+
+1.
+函数调用自身
+设置了返回条件
+
+2.
+没有
+
+3.
+不停地进出栈，内存开销大
+
+4.
+有点：代码简洁
+缺点：内存开销，容易出错，比如没有设置正确返回条件，不易理解
+
+5. 
+
+第23课
+0.
+def my_bin(x):
+    if x  == 0:
+        return ''
+    else:
+        result = my_bin(x // 2)
+        return result + str(x % 2)
+
+print(my_bin(8))
+
+1.
+def huiwen(s):
+    s_len = len(s)
+    ret = True
+    print(s, s_len)
+    if s_len <= 1:
+        return True
+    elif  s[0] == s[s_len-1]:
+        ret &= huiwen(s[1:s_len-1])
+    else:
+        return False
+    return ret
+
+s = input('请输入字符串：')
+
+ret = huiwen(s)
+
+if ret:
+    print('是回文')
+else:
+    print('不是回文')
+
+2.
+
+第十九课
+0.
+我在next()函数里...
+我在pre()函数里...
+
+1.
+有 None
+
+2.
+可以，使用列表或者元祖
+
+3. 
+1314520
+
+4.
+Baby I love you
+
+动动手
+0.
+
+
+>>> def statistic_string(*params):
+	j = 0
+	for single in params:
+		s_len = len(single)
+		al_sum = digit_sum = sp_sum = others_sum = 0
+		for i in range(0, s_len):
+			if single[i].isalpha():
+				al_sum += 1
+			elif single[i].isdigit():
+				digit_sum += 1
+			elif single[i].isspace():
+				sp_sum += 1
+			else:
+				others_sum += 1
+		print('第%d个字符串共有：英文字母%d个，数字%d个，空格%d个，其它字母%d个。'%(j, al_sum, digit_sum, sp_sum, others_sum))
+		j += 1
+
+		
+>>> statistic_string('123abcd   4#e5', '12 ab$$')
+第0个字符串共有：英文字母5个，数字5个，空格3个，其它字母1个。
+第1个字符串共有：英文字母2个，数字2个，空格1个，其它字母2个。
+
+1. 
+>>> def loop_check(origin_string):
+	ret = True
+	s_len = len(origin_string)
+	s_len_half = s_len // 2
+	s_len -= 1
+	for i in range(0, s_len_half):
+		if origin_string[i] != origin_string[s_len-i]:
+			ret = False
+			break
+	return ret
+
+>>> loop_check("1234321")
+True
+>>> loop_check("11234321")
+False
+
+2.
+介绍了函数的返回值，全局变量和局部变量
+
+第20课
+
+0.
+使用global关键字
+
+1. 
+nonlocal
+
+2.
+在外部调用内嵌函数是不合法的
+
+3.
+B的局部变量var在使用前没有定义
+
+4.
+funOut()
+
+5.
+funOut()()
+
+6.
+6
+7
+8
+
+第21课
+0.
+func_A = lambda x, y=3 : x * y
+
+1.
+def func_b(x):
+	if x %2 :
+		return x
+	else:
+		return None
+		
+2.
+起夜次数变少了
+
+3. 
+list(filter(lambda x: x%3 == 0, range(100)))
+
+4.
+print([x for x in range(100) if x%3 == 0])
+
+5.
+list(map(lambda x, y: [x, y], [1,3,5,7,9],[2,4,6,8,0]))
+
+6.
+16
+FishCFishC
+
+第22课
+0.
+函数调用自身，嵌套调用
+
+1.
+函数调用自身
+设置了返回条件
+
+2.
+没有
+
+3.
+不停地进出栈，内存开销大
+
+4.
+有点：代码简洁
+缺点：内存开销，容易出错，比如没有设置正确返回条件，不易理解
+
+5. 
+
+第23课
+0.
+def my_bin(x):
+    if x  == 0:
+        return ''
+    else:
+        result = my_bin(x // 2)
+        return result + str(x % 2)
+
+print(my_bin(8))
+
+1.
+def get_digits(n):
+    ret = []
+    print(n, n//10)
+    if n // 10 == 0:
+        ret.insert(0, n)
+        return ret
+    else:
+        ret = get_digits(n // 10)
+        print(ret)
+        ret.append(n%10)
+        
+        return ret
+
+print(get_digits(12345))
+        
+
+2.
+def huiwen(s):
+    s_len = len(s)
+    ret = True
+    print(s, s_len)
+    if s_len <= 1:
+        return True
+    elif  s[0] == s[s_len-1]:
+        ret &= huiwen(s[1:s_len-1])
+    else:
+        return False
+    return ret
+
+s = input('请输入字符串：')
+
+ret = huiwen(s)
+
+if ret:
+    print('是回文')
+else:
+    print('不是回文')
+
+3.
+def get_age(age, num):
+    if num == 1:
+        return age
+    ret = get_age(age+2, num - 1)
+    return ret
+
+print(get_age(10, 5)
+
+第25课
+0.
+数据的对应关系
+
+1.
+my_disc = {'F':70, 'C':67, 'h':104, 'i':105, 's':115}
+my_disc['C']
+
+2.
+不对，要有映射关系的数据才叫字典
+
+3.
+通过字符串作为索引来查找另一个字符串或者数据
+
+4. 
+后两个顺序不同
+
+5.
+(data[0], data[1], data[2])
+
+动动手
+0.
+
+print('''|--- 欢迎进入通讯录程序 ---|
+|--- 1：查询联系人资料 ---|
+|--- 2：插入新的联系人 ---|
+|--- 3：删除已有联系人 ---|
+|--- 4：退出通讯录程序 ---|
+|--- 5：浏览所有联系人 ---|''')
+
+contacts = {'小甲鱼':111111, '小鱿鱼':2222222}
+
+def search():
+    global contacts
+    
+    name = input('请输入联系人姓名:')
+    
+    tel_number = contacts.get(name, None)
+    
+    if tel_number == None:
+        print('没有找到联系人 ' + name)
+    else:
+        print(name, ':', tel_number)
+
+def insert():
+    global contacts
+    
+    name = input('请输入联系人姓名：')
+
+    if contacts.get(name, None) != None:
+        print('您输入的姓名在通讯录中已存在 -->>', name, ':', contacts[name])
+        modify = input('是否修改用户资料（YES?NO）：')
+        if modify != 'YES':
+            return
+    
+    ret = input('请输入用户联系电话:')
+    tel_number = int(ret)
+    
+    contacts[name] = tel_number
+
+def delete():
+    global contacts
+    
+    name = input('请输入要删除的联系人姓名：')
+    
+    tel_number = contacts.pop(name, None)
+    
+    if tel_number == None:
+        print('没有找到联系人 ' + name)
+
+while True:
+    code = input('\n请输入相关的指令代码：')
+
+    if code == '1':
+        search()
+    elif code == '2':
+        insert()
+    elif code == '3':
+        delete()
+    elif code == '4':
+        break
+    elif code == '5':
+        print(contacts)
+
+print('|---感谢使用通讯录程序 ---|')
+
+26.
+0.
+不支持
+
+1.
+会增加这个item到dict中
+
+2.
+字典的效率更高一些。
+列表查找通过循环，字典的查找是寻找映射关系，相当于已经知道了下标，不需要循环查找
+
+3.
+好像没有
+
+4.
+{1:'数字', 2:'数字'}
+
+5.
+dict2 = dict1.copy()
+
+0.
+user = {'小白鱼':'123456'}
+
+def print_info():
+    print('''|--- 新建用户:N/n ---|
+|--- 登录账号:E/e ---|
+|--- 退出程序:Q/q ---|''')
+    code = input('请输入指令代码：')
+    return code
+def search_user(user_name):
+    global user
+    
+    ret = user.get(user_name, False)
+
+    print('search_user', user_name, ret)
+
+    return ret
+
+def create_user():
+    global user
+    ret = False
+    
+    usr_name = input('请输入用户名：')
+    for i in range(20):
+        ret = search_user(usr_name)
+        
+        if ret == False:
+            pwd = input('请输入密码：')
+            user[usr_name] = pwd
+
+            print('注册成功，赶紧试试登录吧^_^')
+
+            ret = True
+
+            break
+        else:
+            usr_name = input('此用户名已经被使用，请重新输入：')
+            continue        
+    
+    return ret
+
+def login_user():
+    global user
+    ret = False
+    
+    usr_name = input('请输入用户名：')
+    for i in range(20):
+        ret = search_user(usr_name)
+        
+        if ret:
+            pwd = input('请输入密码：')
+            if user.get(usr_name) == pwd:
+                print('欢迎进入xxoo系统，请点右上角的x结束程序！')
+                break
+            else:
+                print('密码错误！')
+
+            ret = True
+            break
+        else:
+            usr_name = input('此用户名不存在，请重新输入：')
+            continue        
+    
+    return ret
+
+def code_handler(code):
+    ret = True
+    if code == 'N' or code == 'n':
+        ret = create_user()
+    elif code == 'E' or code == 'e':
+        ret = login_user()
+    elif code == 'Q' or code == 'q':
+        ret = False
+    elif code == '*':
+        print(user)
+    else:
+        print('指令不存在，请重新输入')
+    return ret
+
+def main():
+    while True:
+        code = print_info()
+
+        ret = code_handler(code)
+
+        if ret == False:
+            break
+
+    print('再见')
+        
+
+
+main()
+
+27.
+0.
+存放不重复的数据
+
+1.
+frozenset()
+
+2.
+len
+
+3. 
+报错，不支持检索
+
+4. 
+set1 = {[1,2]}会报错
+set1 = set([1,2])定义一个set
+
+5.
+1 = 1.0，不同数据类型会判断值是否相同
+
+6.
+添加
+add
+删除
+discard()、remove()、pop()
+
+第27课
+
+0.
+B. '\t'被认为是转义字符Tab
+
+1.
+默认是r
+
+2.
+2进制，创建新文件
+
+3.
+否则写入内容都还在缓存中，没有写入磁盘
+
+4. 
+list(f)
+
+5
+for each_line in f:
+	print(f)
+	
+6.
+返回十字符
+
+7.
+f.tell()
+
+8.
+字符是unicode的，需要修改打开方式为'UTF-8'
+
+0.
+>>> f_mp3 = open('E:\\OpenMe.mp3')
+							  
+>>> f_mp3.read()
+
+1.
+f_mp3_txt.write(f_mp3.read())
+
+第28课
+0.
+
+
+def get_file_name():
+    file_name = input("请输入文件名:")
+
+    return file_name
+
+def save_to_file(file_name, content_list):
+    f = open(file_name,'x')
+
+    f.writelines(content_list)
+
+    f.close()
+
+def get_file_content():
+    content_list = []
+
+    print("请输入内容【单独输入':w'保存退出】:")
+
+    while True:
+        each_line = input()
+
+        if each_line == ':w':
+            break
+        else:
+            each_line += '\n'
+            content_list.append(each_line)
+
+    return content_list
+
+def get_usr_input():
+    file_name = get_file_name()
+
+    content_list = get_file_content()
+
+    save_to_file(file_name,content_list)
+
+get_usr_input()
+
+    
+    
+1. 
+def get_file_name():
+    name_list = []
+    
+    file_name1 = input("请输入需要比较的头一个文件名：")
+    name_list.append(file_name1)
+
+    file_name2 = input("请输入需要比较的另一个文件名：")
+    name_list.append(file_name2)
+    
+    return name_list
+
+def find_diff(str1, str2):
+    count = 0
+    
+    len1 = len(str1)
+    len2 = len(str2)
+
+    min_len = min(len1, len2)
+
+    for i in range(min_len):
+        if str1[i] != str2[i]:
+            break
+        else:
+            count += 1
+
+    return count
+
+def compare(name_list):
+    count = 0
+    differ = {}
+    
+    f1 = open(name_list[0])
+    f2 = open(name_list[1])
+
+    for line1 in f1:
+        line2 = f2.readline()
+
+        count += 1
+
+        if line1 != line2:
+            differ[count] = find_diff(line1, line2)
+
+    f1.close()
+    f2.close()
+
+    return differ
+
+def main():
+    name_list = get_file_name()
+
+    differ = compare(name_list)
+
+    print('两个文件共有【', len(differ), '】处不同:')
+
+    for key in differ:
+        print('第', key, '行的第', differ[key], '个字符不一样')
+            
+    
+main()
+
+2.
+
+
+def main():
+    count = 1
+    
+    file_name = input("请输入要打开的文件:")
+    line = input("请输入需要显示该文件前几行:")
+
+    line = int(line)
+
+    f = open(file_name)
+
+    for each_line in f:
+        if (count > line):
+            break
+        print(each_line)
+        count += 1
+
+    f.close()
+
+main()
+        
+    
+3.
+
+
+def main():
+    count = 1
+    
+    file_name = input("请输入要打开的文件:")
+    line = input("请输入需要显示的行数【格式如13:21 或 :21 或21:】:")
+
+    f = open(file_name)
+
+    (start, end) = line.split(':', 1)
+
+    if start == '':
+        start = 0
+    else:
+        start = int(start)
+
+    if end != '':
+        end = int(end)
+    else:
+        end = -1
+        
+
+    for each_line in f:
+        if (count > end) and end != -1:
+            break
+
+        if (count >= start):
+            print(each_line)
+        count += 1
+
+    f.close()
+
+main()
+        
+4.
+
+def main():
+    dest_file = []
+    
+    name = input('请输入文件名:')
+    origin = input('请输入需要替换的单词或字符:')
+    dest = input('请输入新的单词或字符:')
+
+    print(name, origin,dest)
+
+    f = open(name, 'r')
+
+    origin_file = f.readlines()
+
+    f.close()
+
+    for each in origin_file:
+        print(type(each))
+        new = each.replace(origin, dest)
+        print(new)
+        
+        dest_file.append(new)
+
+    f = open(name, 'w')
+    print(dest_file)
+    f.writelines(dest_file)
+
+    f.close()
+
+
+main()
+
+第30课
+
+0.
+import os
+import os.path
+
+def get_filename():
+    files = os.listdir(os.curdir)
+
+    return files
+
+def type_count(files):
+    dir_str = '文件夹'
+    type_dict = {dir_str:0}
+    
+    for each in files:
+        if os.path.isdir(each):
+            type_dict[dir_str] += 1
+        else:
+            (f_name, f_extention) = os.path.splitext(each)
+
+            if f_extention in type_dict:
+                type_dict[f_extention] += 1
+            else:
+                type_dict[f_extention] = 1
+
+    return type_dict
+
+def main():
+    files = get_filename()
+
+    type_dict = type_count(files)
+
+    for each in type_dict:
+        print('该文件夹下共有类型为【', each, '】的文件', type_dict[each], '个')
+
+main()
+
+
+1.
+import os
+import os.path
+
+def get_filename():
+    files = os.listdir(os.curdir)
+
+    return files
+
+def size_calc(files):
+    
+    for each in files:
+        if os.path.isdir(each) is not True:
+            print('%s【%dBytes】'%(each, os.path.getsize(each)))
+
+def main():
+    files = get_filename()
+
+    size_calc(files)
+
+main()
+
+2.
+import os
+import os.path
+
+def search_file(s_dir, s_file):
+    os.chdir(s_dir)
+
+    for dirs, subdirs, files in os.walk(os.curdir):
+        for each in files:
+            if each == s_file:
+                print(os.path.join(dirs, s_file))
+
+def main():
+    s_dir = input('请输入待查找的初始目录：')
+    s_file = input('请输入需要查找的目标文件：')
+    
+    search_file(s_dir, s_file)
+
+main()
+
+3.
+import os
+import os.path
+
+key_exten = ['.mp4', '.rmvb', '.avi']
+
+def search_file(s_dir):
+    file_list = []
+    os.chdir(s_dir)
+
+    for dirs, subdirs, files in os.walk(os.curdir):
+        for each in files:
+            (name, ext) = os.path.splitext(each)
+            if ext in key_exten:
+                temp_str = os.path.join(os.getcwd(), each) + '\n'
+                file_list.append(temp_str)
+    return file_list
+
+def main():
+    vedio_list_f_name = 'vedioList.txt'
+    s_dir = input('请输入待查找的初始目录：')
+    
+    f_list = search_file(s_dir)
+
+    f = open(vedio_list_f_name, 'w')
+    f.writelines(f_list)
+    f.close()
+
+    print(f_list)
+
+main()
+
+
+第31课
+0.
+pickle实质是文件存储的一种抽象的方法
+
+1.
+dump
+
+2.
+load
+
+3.
+可以，不区分文件类型，都是二进制读写
+
+动动手
+0.
+import pickle
+
+def save_file(file_count, boy_list, girl_list):
+    b_fname = 'boy_' + str(file_count) + '.txt'
+    g_fname = 'girl_' + str(file_count) + '.txt'
+
+    b_f = open(b_fname, 'wb')
+    g_f = open(g_fname, 'wb')
+
+    pickle.dump(boy_list, b_f)
+    pickle.dump(girl_list, g_f)
+
+    b_f.close()
+    g_f.close()
+
+def split_file(name):
+    boy_list = []
+    girl_list = []
+    file_count = 1
+    
+    f = open(name)
+
+    for each_line in f:
+        if each_line[0:6] == '======':
+
+            save_file(file_count, boy_list, girl_list)
+            
+            boy_list.clear()
+            girl_list.clear()
+
+            file_count += 1
+        else:
+            (name, string) = each_line.split(':', 1)
+            
+            if name == '小甲鱼':
+                boy_list.append(string)
+            elif name == '小客服':
+                girl_list.append(string)
+                
+    save_file(file_count, boy_list, girl_list)
+
+    f.close()
+
+split_file('record.txt')
+
+
+32.
+
+0.
+可以让程序继续执行，而不是终止
+
+1. 
+SyntaxError
+
+2.
+IndexError
+
+3.
+AttributeError
+
+4.
+KeyError
+
+5.
+NotImplementedError
+
+6.
+NameError
+
+7.
+NameError
+
+第33课
+
+0.
+try except
+
+1.
+可以，因为有可能发生多种exception
+
+2. 
+使用一个元祖来包含多个异常类型
+
+3.
+可能导致内存数据没有保存到磁盘中
+
+4.
+finally
+
+5.
+
+s = input('请输入字母\'w\'退出，输入任意键继续')
+if s == 'w':
+	raise KeyboardInterrupt
+	
+2.
+def int_input():
+    s = input('请输入一个整数:')
+    try:
+        s_int = int(s)
+    except ValueError:
+        print('出错，您输入的不是整数！')
+        int_input()
+
+    return s
+
+int_input()
+
+第34课
+0.
+if, while, try except
+
+1.
+会
+
+2.
+ABC
+GHI
+JKL
+
+3.
+with as
+
+4.
+会吧
+
+5.
+a = A()
+if a:
+	b = B()
+	if b:
+		suite
+		
+第36课
+0.
+变量和函数
+
+1.
+类是定义，对象是实例
+
+2.
+白猫，绿猫，黑猫警长
+
+3.
+属性：长，宽，边框颜色，填充色
+方法：改变长，改变宽，改变边框颜色，改变填充色
+
+4.
+抽象
+
+5.
+封装：把相关的属性和方法集成在一起
+继承：可以使用其他类的属性和方法
+多态：不同类的相同方法不同
+
+第37课
+0.
+多态
+
+1.
+集成
+
+2.
+访问对象自身的属性
+
+3.
+用前后双下划綫定义为私有属性 
+
+4.
+__init__()
+
+5.
+用类的实例来访问成员函数，而不是用类名
+
+第38课
+测试题
+0.
+避免重复劳动
+
+1.
+创建实例的时候会显示："I love FishC.com"
+会报错，__init__方法只能返回None
+
+2.
+不会
+
+3.
+重构父类的飞的方法，返回False
+
+4.
+能够把所有父类的方法都执行一遍
+
+5.
+导致D继承A两次
+
+6.
+继承至B，然后加入C的方法
+
+第39课
+0.
+组合是指类的构造函数中，初始化其它类的实例
+
+1.
+需要继承多个类是使用组合，继承一个类使用继承
+
+2.
+类定义完成后
+
+3.
+方法会被属性覆盖
+
+4.
+num和count是类属性
+x和y是实例属性
+
+5.
+printBB定义时，没有传入self参数
+
+第40课
+0.
+issubclass
+
+1.
+isinstance(a, A, 'no')
+
+2.
+hasattr(a, 'x')
+
+3.
+将一组函数封装，包括get， set和del方法
+这样对应的方法修改后，调用者不用修改
+
+4. 
+x = property(getXSize, setXSize, delXSize)
+
+5.
+class CodeA:
+	@staticmethod
+    def foo():
+        print("调用静态方法 foo()")
+
+class CodeB:
+	@classmethod
+	def foo(cls):
+        print("调用类方法 foo()")
+
+6.
+def something(func):
+	func()
+
+def f():
+    print("I love FishC.com!")
+
+something(f)
+
+7.
+class C:
+    def __init__(self, size=10):
+        self._x = size
+
+	@property
+    def x(self):
+        return self._x
+
+	@x.setter
+    def x(self, value):
+        self._x = value
+
+	@x.deleter
+    def delXSize(self):
+        del self._x
+
+第41课
+测试题
+0.
+被双下划线包括
+
+1.
+__new__
+
+2.
+需要增加额外功能，比如传入参数等
+
+3.
+__init__必须返回None
+
+4.
+调用__init__并返回实例
+
+5.
+实例被回收的时候
+
+第42课
+0.
+工厂函数本质是类对象，在类对象中实现各种方法
+
+1.
+__add__()
+
+2.
+实例属性和实例方法相同，方法会被属性覆盖
+
+3.
++: __add__(self, other)
+-: __sub__(self, other)
+*: __mul__(self, other)
+/: __truediv__(self, other)
+//: __floordiv__(self, other)
+%: __mod__(self, other)
+divmod(a, b): __divmod__(a, b)
+**: __pow__(self, other[, modulo])
+<<: __lshift__(self, other)
+>>: __rshift__(self, other)
+&: __and__(self, other)
+^: __xor__(self, other)
+|: __or__(self, other)
+
+4.
+鸭子类型
+
+第45课
+0.
+super().__setattr__(name, value+1)
+
+1.
+__getattribute__()
+
+2.
+位置一:
+3
+位置二：
+2
+None
+
+3.
+1
+2
+
+4.
+陷入无限循环
+def __setattr__(self, name, value):
+	super().__setattr__(name, value)
+	super().__setattr__('counter', self.counter + 1)
+
+	
+第46课
+0.
+类的实例访问，修改，销毁时调用的内建函数
+
+1.
+__get__
+__set__
+__delete__
+
+2.
+都会
+
+3.
+20
+0
+
+4.
+
+第47课
+0.
+string, list, tuple
+
+1.
+__setitem__(self, key, value)
+__delitem__(self, key)
+
+
+2.
+__reserve__(self)
+
+3.
+__len__(self)
+
+4.
+__getitem__(self, key), __setitem__(self, key, value), __delete__(self, key)
+
+5.
+不是强行要求的，没有遵循协议，也可以编译执行
+
+第48课
+0.
+迭代是指的反复执行某一个过程，不断地达到或者接近目标
+
+1.
+不是，是一个提供迭代过程的功能
+
+2.
+不能吧？
+
+3.
+判断是否具有__iter__()和__next__()魔法方法
+
+4.
+检测迭代器返回的异常: StopIteration
+
+5.
+set
+第49课
+return或者函数最后一行结束
+
+1.
+程序暂停，等待其他程序唤醒恢复执行
+
+2.
+可以，因为生成器相当于是迭代器的一种，每次yield，相当于是next
+
+3.
+return语句
+
+4.
+将程序暂停，在需要的时候返回值
+
+5.
+保证素数能够不断产生
+
+第50课
+0.
+一段程序
+
+1.
+import hello as h
+
+h.hi()
+
+2.
+import hello
+import hello as h
+from hello import *
+
+3.
+def _hi()
+用下划线来表明是私有函数
+
+4.
+嗨，我是B模块
+
+
+

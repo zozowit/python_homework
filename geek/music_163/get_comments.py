@@ -1,6 +1,21 @@
 import requests as rq
 import json as js
 
+def get_hotcomment(request):
+    res = js.loads(request.text)
+
+    with open('music_comment_json.txt', 'w', encoding = 'utf-8') as f:
+            f.write(str(res))
+
+    hot = res['hotComments']
+
+    with open('hot_comments.txt', 'w', encoding='utf-8') as f:
+        for each in hot:
+            f.write(each["user"]["nickname"]+ ':\n')
+            f.write(each["content"]+ ':\n')
+            f.write('--------------\n')
+
+    
 def get_comment(url):
     target_url = "https://music.163.com/weapi/v1/resource/comments/R_SO_4_{}?csrf_token=".format(url.split('=')[1])
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
@@ -23,6 +38,8 @@ def main():
 
     with open('music_comment.txt', 'w', encoding = 'utf-8') as f:
             f.write(request.text)
+
+    get_hotcomment(request)
 
 if __name__ == '__main__':
     main()
